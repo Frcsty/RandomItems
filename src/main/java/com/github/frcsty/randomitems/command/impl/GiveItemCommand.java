@@ -43,7 +43,7 @@ public final class GiveItemCommand extends CommandBase {
             return;
         }
 
-        final String command = commands.get(RANDOM.nextInt(commands.size() - 1));
+        final String command = commands.get(RANDOM.nextInt(0, commands.size()));
         if (command == null) {
             sender.sendMessage(Component.text("The selected command was invalid!"));
             return;
