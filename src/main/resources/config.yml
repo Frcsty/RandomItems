@@ -1,0 +1,7 @@
+command-list:
+  list-1:
+    - "give <player> diamond_sword 1"
+    - "ae giveitem <player> holywhitescroll 1"
+  list-2:
+    - "give <player> diamond_sword 2"
+    - "ae giveitem <player> holywhitescroll 2"

@@ -1,0 +1,5 @@
+name: RandomItems
+version: '${version}'
+main: com.github.frcsty.randomitems.RandomItems
+api-version: 1.19
+load: STARTUP
