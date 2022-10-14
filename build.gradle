@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "com.github.frcsty"
-version = "0.0.1-Release"
+version = "0.0.2-Release"
 
 repositories {
 	mavenCentral()

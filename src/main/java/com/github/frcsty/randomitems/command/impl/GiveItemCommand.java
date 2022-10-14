@@ -14,10 +14,12 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 
 import java.util.List;
+import java.util.SplittableRandom;
 
 @Command("randomitem")
 public final class GiveItemCommand extends CommandBase {
 
+    private static final SplittableRandom RANDOM = new SplittableRandom();
     private final RandomItems plugin;
 
     public GiveItemCommand(final RandomItems plugin) {
@@ -41,7 +43,13 @@ public final class GiveItemCommand extends CommandBase {
             return;
         }
 
-        commands.forEach(it -> Bukkit.dispatchCommand(sender, it.replace("<player>", target.getName())));
+        final String command = commands.get(RANDOM.nextInt(commands.size() - 1));
+        if (command == null) {
+            sender.sendMessage(Component.text("The selected command was invalid!"));
+            return;
+        }
+
+        Bukkit.dispatchCommand(sender, command.replace("<player>", target.getName()));
     }
 
 }
